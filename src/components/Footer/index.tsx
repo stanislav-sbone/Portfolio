@@ -33,6 +33,19 @@ const Footer: FC = () => {
               alt="github"
             />
           </a>
+          <a
+            href="https://www.linkedin.com/in/stanislav-borisenko-091658398/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="linkedin"
+            className={styles.link}
+          >
+            <img
+              className={styles.linkImage}
+              src="/images/linkedin.svg"
+              alt="linkedin"
+            />
+          </a>
         </div>
       </div>
     </footer>
