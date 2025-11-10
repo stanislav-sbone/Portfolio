@@ -1,0 +1,35 @@
+.footer {
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  color: var(--text-secondary);
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  transition: transform 0.3s ease;
+}
+
+.link:hover {
+  transform: scale(1.2);
+}
+
+.linkImage {
+  width: 40px;
+  height: 40px;
+}
