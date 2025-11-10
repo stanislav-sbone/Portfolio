@@ -1,5 +1,5 @@
 .about {
-  min-height: calc(100vh - 0px);
+  min-height: calc(100vh - 80px);
   padding-top: 5rem;
   background: linear-gradient(
     135deg,
