@@ -37,6 +37,21 @@
   padding: 0.5rem 0;
 }
 
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
 .navLink:hover {
   color: var(--accent-color);
 }
@@ -46,13 +61,7 @@
 }
 
 .navLink.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--accent-color);
+  width: 100%;
 }
 
 .headerButtons {
