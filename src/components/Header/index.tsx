@@ -9,10 +9,6 @@ const Header: FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const handleClick = () => {
-    toggleTheme();
-  };
-
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -54,7 +50,7 @@ const Header: FC = () => {
         </nav>
 
         <div className={styles.headerButtons}>
-          <button className={styles.themeButton} onClick={handleClick}>
+          <button className={styles.themeButton} onClick={toggleTheme}>
             {theme === 'dark' ? '🌙' : '☀️'}
           </button>
         </div>
