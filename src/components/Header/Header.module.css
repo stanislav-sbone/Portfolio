@@ -69,4 +69,9 @@
 
 .themeButton {
   font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.themeButton:hover {
+  transform: scale(1.35);
 }
