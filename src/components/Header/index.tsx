@@ -1,11 +1,17 @@
 import type { FC } from 'react';
 import { Link, useLocation } from 'react-router';
 import styles from './Header.module.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Header: FC = () => {
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleClick = () => {
+    toggleTheme();
+  };
 
   return (
     <header className={styles.header}>
@@ -48,7 +54,9 @@ const Header: FC = () => {
         </nav>
 
         <div className={styles.headerButtons}>
-          <button className={styles.themeButton}>🌙</button>
+          <button className={styles.themeButton} onClick={handleClick}>
+            {theme === 'dark' ? '🌙' : '☀️'}
+          </button>
         </div>
       </div>
     </header>

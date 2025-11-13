@@ -6,22 +6,25 @@ import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contacts from './pages/Contacts';
 import Footer from './components/Footer';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contacts" element={<Contacts />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contacts" element={<Contacts />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 
