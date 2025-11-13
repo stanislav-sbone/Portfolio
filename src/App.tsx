@@ -22,8 +22,8 @@ function App() {
             <Route path="/contacts" element={<Contacts />} />
           </Routes>
         </main>
-        <Footer />
       </Router>
+      <Footer />
     </ThemeProvider>
   );
 }
