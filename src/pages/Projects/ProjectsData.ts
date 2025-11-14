@@ -1,11 +1,4 @@
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  githubUrl: string;
-  demoUrl?: string;
-}
+import type { Project } from '../../types/project';
 
 export const projects: Project[] = [
   {
