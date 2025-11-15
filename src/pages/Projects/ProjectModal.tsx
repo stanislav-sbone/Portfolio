@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import type { Project } from '../../types/project';
 import styles from './Projects.module.css';
+import ModalSection from './ModalSection';
 
 interface IProps {
   project: Project;
@@ -29,18 +30,11 @@ const ProjectModal: FC<IProps> = ({ project, backdropClick, closeModal }) => {
               alt={project.title}
               className={styles.modalImage}
             />
-            <div className={styles.descriptionContainer}>
-              <p className={styles.descriptionTitle}>Описание</p>
-              <p className={styles.descriptionValue}>{project.description}</p>
-            </div>
-            <div className={styles.descriptionContainer}>
-              <p className={styles.descriptionTitle}>
-                Использованные технологии
-              </p>
-              <p className={styles.descriptionValue}>
-                {project.technologies.join(', ')}
-              </p>
-            </div>
+            <ModalSection title="Описание" value={project.description} />
+            <ModalSection
+              title="Использованные технологии"
+              value={project.technologies.join(', ')}
+            />
             <div className={styles.descriptionContainer}>
               <p className={styles.descriptionTitle}>Ключевые особенности</p>
               <ul className={styles.featuresList}>
