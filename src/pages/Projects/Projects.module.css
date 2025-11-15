@@ -6,6 +6,7 @@
     var(--bg-primary) 0%,
     var(--bg-secondary) 100%
   );
+  position: relative;
 }
 
 .container {
@@ -56,6 +57,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  cursor: pointer;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -137,4 +139,130 @@
 
 .link:hover::after {
   width: 100%;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  width: 50%;
+  padding: 1.5rem 0;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modalContainer {
+  padding: 0 1.5rem;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modalTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.closeButton {
+  top: 1rem;
+  right: 1rem;
+  color: var(--text-primary);
+  font-size: 2rem;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+  color: var(--accent-color);
+}
+
+.modalContent {
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.descriptionTitle {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.modalDescription {
+  color: var(--text-primary);
+}
+
+.descriptionLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.descriptionLink {
+  transition: color 0.3s ease;
+}
+
+.descriptionLink:hover {
+  color: var(--accent-color);
 }

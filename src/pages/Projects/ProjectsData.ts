@@ -9,6 +9,7 @@ export const projects: Project[] = [
     technologies: ['Typescript', 'React', 'Tailwind', 'TanStack Query'],
     githubUrl: 'https://github.com/stanislav-sbone/Todo_List',
     demoUrl: 'https://todo-list-sbone.vercel.app/',
+    image: '/images/projects/todo-list.png',
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     technologies: ['Typescript', 'React', 'CSS Modules', 'Axios'],
     githubUrl: 'https://github.com/stanislav-sbone/Weather_App',
     demoUrl: 'https://weather-app-sbone.vercel.app/',
+    image: '/images/projects/weather-app.png',
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ export const projects: Project[] = [
       'TanStack Query',
     ],
     githubUrl: 'https://github.com/stanislav-sbone/CryptoDash',
+    image: '/images/projects/crypto-dash.png',
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const projects: Project[] = [
     technologies: ['Typescript', 'React', 'React Router', 'styled-components'],
     githubUrl: 'https://github.com/stanislav-sbone/Naruto',
     demoUrl: 'https://naruto-sbone.vercel.app/',
+    image: '/images/projects/naruto-characters.png',
   },
   {
     id: 5,
@@ -46,5 +50,6 @@ export const projects: Project[] = [
       'Сайт визитка с информацией о себе, проектах, контактах и стеке технологий',
     technologies: ['Typescript', 'React', 'CSS Modules', 'React Router'],
     githubUrl: 'https://github.com/stanislav-sbone/Portfolio',
+    image: '/images/projects/portfolio.png',
   },
 ];

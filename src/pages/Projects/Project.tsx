@@ -4,11 +4,23 @@ import type { Project } from '../../types/project';
 
 interface IProps {
   project: Project;
+  onClick: () => void;
 }
 
-const ProjectCard: FC<IProps> = ({ project }) => {
+const ProjectCard: FC<IProps> = ({ project, onClick }) => {
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (!target.closest('a')) {
+      onClick();
+    }
+  };
+
   return (
-    <div key={project.id} className={styles.projectCard}>
+    <div
+      key={project.id}
+      className={styles.projectCard}
+      onClick={handleCardClick}
+    >
       <div className={styles.projectHeader}>
         <h3 className={styles.projectTitle}>{project.title}</h3>
       </div>
@@ -29,6 +41,7 @@ const ProjectCard: FC<IProps> = ({ project }) => {
             className={styles.link}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
           >
             GitHub
           </a>
@@ -39,6 +52,7 @@ const ProjectCard: FC<IProps> = ({ project }) => {
             className={styles.link}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
           >
             Демо
           </a>
