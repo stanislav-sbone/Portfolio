@@ -3,6 +3,7 @@ import styles from './Projects.module.css';
 import { projects } from './ProjectsData';
 import ProjectCard from './Project';
 import type { Project } from '../../types/project';
+import ProjectModal from './ProjectModal';
 
 const Projects: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,67 +62,13 @@ const Projects: FC = () => {
           ))}
         </div>
       </div>
+
       {isOpen && modalProject && (
-        <div className={styles.backdrop} onClick={handleBackdropClick}>
-          <div className={styles.modal}>
-            <div className={styles.modalContainer}>
-              <div className={styles.modalHeader}>
-                <h2 className={styles.modalTitle}>{modalProject.title}</h2>
-                <button
-                  className={styles.closeButton}
-                  onClick={handleCloseModal}
-                  aria-label="Закрыть модальное окно"
-                >
-                  ×
-                </button>
-              </div>
-              <div className={styles.modalContent}>
-                <img
-                  src={modalProject.image}
-                  alt={modalProject.title}
-                  className={styles.modalImage}
-                />
-                <div className={styles.descriptionContainer}>
-                  <p className={styles.descriptionTitle}>Описание</p>
-                  <p className={styles.descriptionValue}>
-                    {modalProject.description}
-                  </p>
-                </div>
-                <div className={styles.descriptionContainer}>
-                  <p className={styles.descriptionTitle}>
-                    Использованные технологии
-                  </p>
-                  <p className={styles.descriptionValue}>
-                    {modalProject.technologies.join(', ')}
-                  </p>
-                </div>
-                <div className={styles.descriptionContainer}>
-                  <p className={styles.descriptionTitle}>Ссылки</p>
-                  <div className={styles.descriptionLinks}>
-                    <a
-                      href={modalProject.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.descriptionLink}
-                    >
-                      GitHub
-                    </a>
-                    {modalProject.demoUrl && (
-                      <a
-                        href={modalProject.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.descriptionLink}
-                      >
-                        Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProjectModal
+          project={modalProject}
+          backdropClick={handleBackdropClick}
+          closeModal={handleCloseModal}
+        />
       )}
     </section>
   );
