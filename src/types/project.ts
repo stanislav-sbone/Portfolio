@@ -6,4 +6,5 @@ export interface Project {
   githubUrl: string;
   demoUrl?: string;
   image: string;
+  features: string[];
 }

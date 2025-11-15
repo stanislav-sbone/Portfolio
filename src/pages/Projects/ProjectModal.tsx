@@ -42,6 +42,14 @@ const ProjectModal: FC<IProps> = ({ project, backdropClick, closeModal }) => {
               </p>
             </div>
             <div className={styles.descriptionContainer}>
+              <p className={styles.descriptionTitle}>Ключевые особенности</p>
+              <ul className={styles.featuresList}>
+                {project.features.map((feat) => (
+                  <li className={styles.feature}>{feat}</li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.descriptionContainer}>
               <p className={styles.descriptionTitle}>Ссылки</p>
               <div className={styles.descriptionLinks}>
                 <a
@@ -59,7 +67,7 @@ const ProjectModal: FC<IProps> = ({ project, backdropClick, closeModal }) => {
                     rel="noopener noreferrer"
                     className={styles.descriptionLink}
                   >
-                    Demo
+                    Демо-версия
                   </a>
                 )}
               </div>

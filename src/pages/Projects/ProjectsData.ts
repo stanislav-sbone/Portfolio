@@ -5,11 +5,29 @@ export const projects: Project[] = [
     id: 1,
     title: 'Todo list',
     description:
-      'Приложение для управления задачами с возможностью добавления, редактирования и удаления задач. Реализована фильтрация и смена темы',
-    technologies: ['Typescript', 'React', 'Tailwind', 'TanStack Query'],
+      'Приложение для управления задачами с возможностью добавления, редактирования и удаления задач',
+    technologies: [
+      'Typescript',
+      'React',
+      'Tailwind',
+      'TanStack Query',
+      'Express.js',
+    ],
     githubUrl: 'https://github.com/stanislav-sbone/Todo_List',
     demoUrl: 'https://todo-list-sbone.vercel.app/',
     image: '/images/projects/todo-list.png',
+    features: [
+      'Добавление новых задач',
+      'Отметка задач как выполненных/невыполненных',
+      'Редактирование задач (с возможностью отмены изменений)',
+      'Удаление задач',
+      'Фильтрация задач по тексту',
+      'Сортировка задач (Все / Выполненные / Невыполненные)',
+      'Перетаскивание задач для изменения порядка (drag & drop)',
+      'Смена темы (Светлая/Темная) с сохранением в localStorage',
+      'Изоляция данных пользователя (через userId)',
+      'Адаптивный дизайн',
+    ],
   },
   {
     id: 2,
@@ -19,6 +37,10 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/stanislav-sbone/Weather_App',
     demoUrl: 'https://weather-app-sbone.vercel.app/',
     image: '/images/projects/weather-app.png',
+    features: [
+      'Вывод текущей погоды с помощью OpenWeather API',
+      'Дополнительно вывод прогноза погоды на 5 дней',
+    ],
   },
   {
     id: 3,
@@ -33,6 +55,14 @@ export const projects: Project[] = [
     ],
     githubUrl: 'https://github.com/stanislav-sbone/CryptoDash',
     image: '/images/projects/crypto-dash.png',
+    features: [
+      'Просмотр списка популярных Layer-1 криптовалют с текущими ценами и изменением цены за 24 часа',
+      'Фильтрация списка криптовалют',
+      'Подробная информация о выбранном токене',
+      'Актуальные цены, график на 7 дней и данные с CoinGecko API',
+      'Смена темы (Тёмная/светлая)',
+      'Смена языка приложения (Русский/English)',
+    ],
   },
   {
     id: 4,
@@ -42,6 +72,14 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/stanislav-sbone/Naruto',
     demoUrl: 'https://naruto-sbone.vercel.app/',
     image: '/images/projects/naruto-characters.png',
+    features: [
+      'Вывод персонажей из Наруто из стороннего API',
+      'Фильтрация персонажей',
+      'Пагинация списка персонажей',
+      'Роутинг страниц (Главная, Хвостатые звери, Об аниме)',
+      'Отдельные страницы карточек персонажей',
+      'Смена темы (Тёмная/светлая)',
+    ],
   },
   {
     id: 5,
@@ -51,5 +89,6 @@ export const projects: Project[] = [
     technologies: ['Typescript', 'React', 'CSS Modules', 'React Router'],
     githubUrl: 'https://github.com/stanislav-sbone/Portfolio',
     image: '/images/projects/portfolio.png',
+    features: [],
   },
 ];
