@@ -1,7 +1,7 @@
 import { useState, useEffect, type FC } from 'react';
 import styles from './Projects.module.css';
 import { projects } from './ProjectsData';
-import ProjectCard from './Project';
+import ProjectCard from './ProjectCard';
 import type { Project } from '../../types/project';
 import ProjectModal from './ProjectModal';
 
