@@ -29,7 +29,7 @@ const Header: FC = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`${styles.navLink} ${isActive('/about') ? styles.active : ''}`}
+              className={`${styles.navLink} ${isActive(item.path) ? styles.active : ''}`}
             >
               {item.label}
             </Link>
