@@ -9,6 +9,14 @@ const Header: FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const navItems = [
+    { path: '/', label: 'Главная' },
+    { path: '/about', label: 'О себе' },
+    { path: '/skills', label: 'Навыки' },
+    { path: '/projects', label: 'Проекты' },
+    { path: '/contacts', label: 'Контакты' },
+  ];
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -17,36 +25,15 @@ const Header: FC = () => {
         </Link>
 
         <nav className={styles.nav}>
-          <Link
-            to="/"
-            className={`${styles.navLink} ${isActive('/') ? styles.active : ''}`}
-          >
-            Главная
-          </Link>
-          <Link
-            to="/about"
-            className={`${styles.navLink} ${isActive('/about') ? styles.active : ''}`}
-          >
-            О себе
-          </Link>
-          <Link
-            to="/skills"
-            className={`${styles.navLink} ${isActive('/skills') ? styles.active : ''}`}
-          >
-            Навыки
-          </Link>
-          <Link
-            to="/projects"
-            className={`${styles.navLink} ${isActive('/projects') ? styles.active : ''}`}
-          >
-            Проекты
-          </Link>
-          <Link
-            to="/contacts"
-            className={`${styles.navLink} ${isActive('/contacts') ? styles.active : ''}`}
-          >
-            Контакты
-          </Link>
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`${styles.navLink} ${isActive('/about') ? styles.active : ''}`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         <div className={styles.headerButtons}>
