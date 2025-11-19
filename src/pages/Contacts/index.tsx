@@ -33,7 +33,7 @@ const Contacts: FC = () => {
   ];
 
   return (
-    <section className={styles.skills}>
+    <section className={styles.contacts}>
       <div className={styles.container}>
         <h2 className={styles.title}>Контакты</h2>
         <p className={styles.subtitle}>
