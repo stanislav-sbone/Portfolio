@@ -27,6 +27,7 @@ const Footer: FC = () => {
         <div className={styles.socials}>
           {socials.map((social) => (
             <a
+              key={social.name}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
