@@ -7,6 +7,7 @@ import {
 import styles from './Contacts.module.css';
 import ErrorMessage from './ErrorMessage';
 import { sendMessage } from '../../services/api';
+import { toast } from 'react-toastify';
 
 type Inputs = {
   name: string;
@@ -71,11 +72,16 @@ const ContactForm: FC = () => {
         data.email.trim(),
         data.message.trim(),
       );
-      console.log(result.message);
+      toast.success(result.message);
 
       reset();
     } catch (error) {
       console.error('Ошибка при отправке сообщения:', error);
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : 'Ошибка при отправке сообщения';
+      toast.error(errorMessage);
     }
   };
 

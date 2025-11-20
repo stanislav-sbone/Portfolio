@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Contacts from './pages/Contacts';
 import Footer from './components/Footer';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { Slide, ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -24,6 +25,13 @@ function App() {
         </main>
       </Router>
       <Footer />
+      <ToastContainer
+        autoClose={3000}
+        position="bottom-right"
+        draggable
+        theme="light"
+        transition={Slide}
+      />
     </ThemeProvider>
   );
 }
