@@ -97,6 +97,7 @@ const ContactForm: FC = () => {
           placeholder="Введите имя"
           className={styles.input}
           {...register('name', nameOptions)}
+          disabled={isSubmitting}
         />
         <ErrorMessage message={errors.name?.message} />
       </div>
@@ -110,6 +111,7 @@ const ContactForm: FC = () => {
           placeholder="Введите email"
           className={styles.input}
           {...register('email', emailOptions)}
+          disabled={isSubmitting}
         />
         <ErrorMessage message={errors.email?.message} />
       </div>
@@ -122,6 +124,7 @@ const ContactForm: FC = () => {
           placeholder="Введите сообщение"
           className={styles.textarea}
           {...register('message', messageOptions)}
+          disabled={isSubmitting}
         />
         <ErrorMessage message={errors.message?.message} />
       </div>

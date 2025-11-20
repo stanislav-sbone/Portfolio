@@ -190,3 +190,24 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(220, 20, 60, 0.4);
 }
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--bg-primary);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button:disabled:hover {
+  opacity: 0.6;
+  background-color: var(--accent-color);
+  transform: none;
+  box-shadow: none;
+}
