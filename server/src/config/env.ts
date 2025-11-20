@@ -14,7 +14,7 @@ if (missingVars.length > 0) {
 
 export const config = {
   nodeEnv: process.env.NODE_ENV ?? 'development',
-  port: 5000,
+  port: Number(process.env.PORT) || 5000,
   email: {
     user: process.env.EMAIL_USER!,
     pass: process.env.EMAIL_PASS!,
