@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import { config } from '../config/env';
 
 export const sendContactEmail = async (
   name: string,
@@ -8,8 +9,8 @@ export const sendContactEmail = async (
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: config.email.user,
+      pass: config.email.pass,
     },
   });
 
@@ -30,8 +31,8 @@ export const sendContactEmail = async (
     `;
 
   await transporter.sendMail({
-    from: process.env.EMAIL_USER,
-    to: process.env.RECIPIENT_EMAIL,
+    from: config.email.user,
+    to: config.email.recipient,
     subject: 'Новое сообщение с сайта портфолио',
     html,
   });
