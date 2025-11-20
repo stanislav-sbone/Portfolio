@@ -142,6 +142,18 @@
   border: 1px solid var(--accent-color);
 }
 
+.input {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--text-primary) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-secondary) inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    border: 1px solid var(--border-color);
+  }
+}
+
 .textarea {
   resize: none;
   height: 150px;

@@ -4,7 +4,6 @@ import Contact from './Contact';
 import ContactForm from './ContactForm';
 
 const Contacts: FC = () => {
-  // TODO: Form handler and use react hook form
   const contacts = [
     {
       name: 'Email',
