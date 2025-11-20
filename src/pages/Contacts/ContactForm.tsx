@@ -6,6 +6,7 @@ import {
 } from 'react-hook-form';
 import styles from './Contacts.module.css';
 import ErrorMessage from './ErrorMessage';
+import { sendMessage } from '../../services/api';
 
 type Inputs = {
   name: string;
@@ -53,9 +54,15 @@ const ContactForm: FC = () => {
     reset,
   } = useForm<Inputs>({ mode: 'onBlur' });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    alert(JSON.stringify(data));
-    reset();
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+      const result = await sendMessage(data.name, data.email, data.message);
+      console.log(result.message);
+
+      reset();
+    } catch (error) {
+      console.error('Ошибка при отправке сообщения:', error);
+    }
   };
 
   return (
