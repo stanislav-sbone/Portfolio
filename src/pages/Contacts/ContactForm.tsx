@@ -16,13 +16,18 @@ type Inputs = {
 
 const nameOptions: RegisterOptions<Inputs, 'name'> = {
   required: 'Заполните поле с именем',
-  minLength: {
-    value: 2,
-    message: 'Минимум 2 символа в имени',
-  },
-  maxLength: {
-    value: 20,
-    message: 'Максимум 20 символов в имени',
+  validate: (value) => {
+    const trimmed = value.trim();
+    if (trimmed.length === 0) {
+      return 'Заполните поле с именем';
+    }
+    if (trimmed.length < 2) {
+      return 'Минимум 2 символа в имени';
+    }
+    if (trimmed.length > 20) {
+      return 'Максимум 20 символов в имени';
+    }
+    return true;
   },
 };
 
@@ -36,13 +41,18 @@ const emailOptions: RegisterOptions<Inputs, 'email'> = {
 
 const messageOptions: RegisterOptions<Inputs, 'message'> = {
   required: 'Заполните поле с сообщением',
-  minLength: {
-    value: 10,
-    message: 'Сообщение должно содержать минимум 10 символов',
-  },
-  maxLength: {
-    value: 1000,
-    message: 'Сообщение не должно превышать 1000 символов',
+  validate: (value) => {
+    const trimmed = value.trim();
+    if (trimmed.length === 0) {
+      return 'Заполните поле с сообщением';
+    }
+    if (trimmed.length < 10) {
+      return 'Сообщение должно содержать минимум 10 символов';
+    }
+    if (trimmed.length > 1000) {
+      return 'Сообщение не должно превышать 1000 символов';
+    }
+    return true;
   },
 };
 
@@ -56,7 +66,11 @@ const ContactForm: FC = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const result = await sendMessage(data.name, data.email, data.message);
+      const result = await sendMessage(
+        data.name.trim(),
+        data.email.trim(),
+        data.message.trim(),
+      );
       console.log(result.message);
 
       reset();
