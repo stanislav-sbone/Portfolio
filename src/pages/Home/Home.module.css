@@ -104,3 +104,45 @@
   background-color: var(--accent-color);
   transform: translateY(-2px);
 }
+
+@media (max-width: 1280px) {
+  .container {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 2.25rem 2rem;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .textContent {
+    gap: 1rem;
+  }
+
+  .imagePlaceholder {
+    width: 240px;
+    height: 240px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}

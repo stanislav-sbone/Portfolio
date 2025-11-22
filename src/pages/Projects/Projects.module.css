@@ -292,3 +292,37 @@
 .descriptionLink:hover {
   color: var(--accent-color);
 }
+
+@media (max-width: 1280px) {
+  .projectsGrid {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    padding: 0 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

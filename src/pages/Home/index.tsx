@@ -38,7 +38,7 @@ const Home: FC = () => {
                 Интересуюсь современной{' '}
                 <span className={styles.subHighlight}>frontend</span>{' '}
                 разработкой и стремлюсь развиваться в команде, создающей удобные
-                и производительные web-приложения
+                и производительные web-приложения.
               </p>
             </div>
             <div className={styles.buttons}>

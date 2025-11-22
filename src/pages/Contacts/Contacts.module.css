@@ -45,6 +45,7 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 1fr;
   gap: 4rem;
 }
 
@@ -222,4 +223,66 @@
   background-color: var(--accent-color);
   transform: none;
   box-shadow: none;
+}
+
+@media (max-width: 1280px) {
+  .content {
+    padding: 0 2rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    padding-top: 2rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .cardIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .form {
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    padding: 0 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+
+  .contactCard {
+    padding: 1.25rem;
+  }
+
+  .cardLink {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .contactCard {
+    padding: 1rem;
+  }
+
+  .cardLink {
+    font-size: 0.9rem;
+  }
+
+  .cardIcon {
+    width: 32px;
+    height: 32px;
+  }
 }

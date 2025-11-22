@@ -33,7 +33,7 @@ export const projects: Project[] = [
     id: 2,
     title: 'Weather App',
     description: 'Приложение прогноза погоды с использованием OpenWeather API',
-    technologies: ['Typescript', 'React', 'CSS Modules', 'Axios'],
+    technologies: ['Typescript', 'React', 'CSS Modules', 'Axios', 'REST API'],
     githubUrl: 'https://github.com/stanislav-sbone/Weather_App',
     demoUrl: 'https://weather-app-sbone.vercel.app/',
     image: '/images/projects/weather-app.png',
