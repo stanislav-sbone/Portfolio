@@ -14,6 +14,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  position: relative;
 }
 
 .logo {
@@ -65,6 +66,9 @@
 }
 
 .headerButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .themeButton {
@@ -74,6 +78,74 @@
 
 .themeButton:hover {
   transform: scale(1.35);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menuToggle.active .burger:nth-child(1) {
+  transform: rotate(45deg) translateX(11px);
+}
+
+.menuToggle.active .burger:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.active .burger:nth-child(3) {
+  transform: rotate(-45deg) translateX(11px);
+}
+
+.burger {
+  width: 25px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burgerMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  animation: slideDown 0.4s ease-out;
+  z-index: 999;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.burgerLink {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.burgerLink::after {
+  display: none;
+}
+
+.burgerMenuButtons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 2rem;
 }
 
 @media (max-width: 1280px) {
@@ -89,6 +161,10 @@
 
   .headerButtons {
     display: none;
+  }
+
+  .menuToggle {
+    display: flex;
   }
 }
 

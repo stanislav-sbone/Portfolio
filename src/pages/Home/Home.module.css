@@ -121,6 +121,10 @@
     gap: 2rem;
   }
 
+  .textContent {
+    gap: 1rem;
+  }
+
   .title {
     font-size: 2.75rem;
   }
@@ -131,10 +135,6 @@
 }
 
 @media (max-width: 480px) {
-  .textContent {
-    gap: 1rem;
-  }
-
   .imagePlaceholder {
     width: 240px;
     height: 240px;
