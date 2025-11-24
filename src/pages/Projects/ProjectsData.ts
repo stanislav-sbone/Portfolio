@@ -40,6 +40,7 @@ export const projects: Project[] = [
     features: [
       'Вывод текущей погоды с помощью OpenWeather API',
       'Дополнительно вывод прогноза погоды на 5 дней',
+      'Адаптивный дизайн',
     ],
   },
   {
@@ -89,6 +90,13 @@ export const projects: Project[] = [
     technologies: ['Typescript', 'React', 'CSS Modules', 'React Router'],
     githubUrl: 'https://github.com/stanislav-sbone/Portfolio',
     image: '/images/projects/portfolio.png',
-    features: [],
+    features: [
+      'Навигация по разделам Home / About / Skills / Projects / Contacts без перезагрузки благодаря react-router.',
+      'Галерея проектов с карточками и детальными модальными окнами.',
+      'Контактная форма с валидацией react-hook-form, уведомлениями react-toastify и отправкой письма через собственный Express API.',
+      'Глобальный переключатель темы (light/dark) с сохранением состояния в localStorage.',
+      'Адаптивная шапка с бургер-меню',
+      'Адаптивный дизайн',
+    ],
   },
 ];
