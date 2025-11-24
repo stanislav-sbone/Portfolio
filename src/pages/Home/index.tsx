@@ -1,6 +1,7 @@
 import type { FC } from 'react';
+import { homeParagraphs } from './HomeData';
 import styles from './Home.module.css';
-import { Link } from 'react-router';
+import HomeButtons from './HomeButtons';
 
 const Home: FC = () => {
   return (
@@ -21,34 +22,14 @@ const Home: FC = () => {
               </span>
             </h1>
             <div className={styles.subtitlesHolder}>
-              <p className={styles.subtitle}>
-                Уверенно владею{' '}
-                <span className={styles.subHighlight}>HTML</span>,
-                <span className={styles.subHighlight}> CSS</span>,
-                <span className={styles.subHighlight}> JavaScript(ES6+) </span>{' '}
-                и<span className={styles.subHighlight}> TypeScript</span>.
-              </p>
-              <p className={styles.subtitle}>
-                Разрабатываю интерфейсы на{' '}
-                <span className={styles.subHighlight}>React</span> с
-                использованием компонентного подхода, хуков и управления
-                состоянием.
-              </p>
-              <p className={styles.subtitle}>
-                Интересуюсь современной{' '}
-                <span className={styles.subHighlight}>frontend</span>{' '}
-                разработкой и стремлюсь развиваться в команде, создающей удобные
-                и производительные web-приложения.
-              </p>
+              {homeParagraphs.map((p) => (
+                <p key={p.key} className={styles.subtitle}>
+                  {p.text}
+                </p>
+              ))}
             </div>
-            <div className={styles.buttons}>
-              <Link to="/projects" className={styles.primaryButton}>
-                Мои проекты
-              </Link>
-              <Link to="/contacts" className={styles.secondaryButton}>
-                Связаться со мной
-              </Link>
-            </div>
+
+            <HomeButtons />
           </div>
         </div>
       </div>

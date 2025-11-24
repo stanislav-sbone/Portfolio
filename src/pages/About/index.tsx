@@ -9,9 +9,9 @@ const About: FC = () => {
         <h1 className={styles.title}>О себе</h1>
         <div className={styles.content}>
           <div className={styles.textBlock}>
-            {aboutParagraphs.map((text, index) => (
-              <p key={index} className={styles.text}>
-                {text}
+            {aboutParagraphs.map((p) => (
+              <p key={p.key} className={styles.text}>
+                {p.text}
               </p>
             ))}
           </div>
