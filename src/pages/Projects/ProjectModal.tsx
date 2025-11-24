@@ -39,7 +39,9 @@ const ProjectModal: FC<IProps> = ({ project, backdropClick, closeModal }) => {
               <p className={styles.descriptionTitle}>Ключевые особенности</p>
               <ul className={styles.featuresList}>
                 {project.features.map((feat) => (
-                  <li className={styles.feature}>{feat}</li>
+                  <li key={feat} className={styles.feature}>
+                    {feat}
+                  </li>
                 ))}
               </ul>
             </div>
