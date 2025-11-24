@@ -1,22 +1,12 @@
 import { useState, type FC } from 'react';
-import { Link, useLocation } from 'react-router';
+import { Link } from 'react-router';
+import Nav from './Nav';
+import ThemeButton from './ThemeButton';
+import BurgerMenu from './BurgerMenu';
 import styles from './Header.module.css';
-import { useTheme } from '../../contexts/ThemeContext';
 
 const Header: FC = () => {
-  const { theme, toggleTheme } = useTheme();
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-
-  const isActive = (path: string) => location.pathname === path;
-
-  const navItems = [
-    { path: '/', label: 'Главная' },
-    { path: '/about', label: 'О себе' },
-    { path: '/skills', label: 'Навыки' },
-    { path: '/projects', label: 'Проекты' },
-    { path: '/contacts', label: 'Контакты' },
-  ];
 
   return (
     <header className={styles.header}>
@@ -25,22 +15,10 @@ const Header: FC = () => {
           <span className={styles.logo}>Frontend Dev</span>
         </Link>
 
-        <nav className={styles.nav}>
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`${styles.navLink} ${isActive(item.path) ? styles.active : ''}`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <Nav />
 
         <div className={styles.headerButtons}>
-          <button className={styles.themeButton} onClick={toggleTheme}>
-            {theme === 'dark' ? '🌙' : '☀️'}
-          </button>
+          <ThemeButton />
         </div>
         <button
           className={`${styles.menuToggle} ${isOpen ? styles.active : ''}`}
@@ -50,25 +28,8 @@ const Header: FC = () => {
           <span className={styles.burger}></span>
           <span className={styles.burger}></span>
         </button>
-        {isOpen && (
-          <div className={styles.burgerMenu}>
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`${styles.burgerLink} ${isActive(item.path) ? styles.active : ''}`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className={styles.burgerMenuButtons}>
-              <button className={styles.themeButton} onClick={toggleTheme}>
-                {theme === 'dark' ? '🌙' : '☀️'}
-              </button>
-            </div>
-          </div>
-        )}
+
+        {isOpen && <BurgerMenu setIsOpen={setIsOpen} />}
       </div>
     </header>
   );
