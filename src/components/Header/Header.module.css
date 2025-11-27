@@ -57,7 +57,7 @@
   color: var(--accent-color);
 }
 
-.navLink.active {
+.active {
   color: var(--accent-color);
 }
 
@@ -133,6 +133,7 @@
 
 .burgerLink {
   padding: 1.5rem;
+  font-weight: 500;
   text-align: center;
   border-bottom: 1px solid var(--border-color);
 }
