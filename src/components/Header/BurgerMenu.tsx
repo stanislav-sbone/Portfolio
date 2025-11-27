@@ -7,15 +7,22 @@ import ThemeButton from './ThemeButton';
 
 interface IProps {
   setIsOpen: (state: boolean) => void;
+  menuToggleRef: React.RefObject<HTMLButtonElement | null>;
 }
 
-const BurgerMenu: FC<IProps> = ({ setIsOpen }) => {
+const BurgerMenu: FC<IProps> = ({ setIsOpen, menuToggleRef }) => {
   const isActive = useIsActive();
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const closeOnOuterTouch = (event: TouchEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+
+      if (menuRef.current && !menuRef.current.contains(target)) {
+        if (menuToggleRef.current && menuToggleRef.current.contains(target)) {
+          return;
+        }
+
         setIsOpen(false);
       }
     };
@@ -24,7 +31,7 @@ const BurgerMenu: FC<IProps> = ({ setIsOpen }) => {
     return () => {
       document.removeEventListener('touchstart', closeOnOuterTouch);
     };
-  }, [setIsOpen]);
+  }, [setIsOpen, menuToggleRef]);
 
   return (
     <div ref={menuRef} className={styles.burgerMenu}>

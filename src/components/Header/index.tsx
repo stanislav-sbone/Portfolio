@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { useState, useRef, type FC } from 'react';
 import { Link } from 'react-router';
 import Nav from './Nav';
 import ThemeButton from './ThemeButton';
@@ -7,6 +7,7 @@ import styles from './Header.module.css';
 
 const Header: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement | null>(null);
 
   return (
     <header className={styles.header}>
@@ -21,6 +22,7 @@ const Header: FC = () => {
           <ThemeButton />
         </div>
         <button
+          ref={menuToggleRef}
           className={`${styles.menuToggle} ${isOpen ? styles.active : ''}`}
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -29,7 +31,9 @@ const Header: FC = () => {
           <span className={styles.burger}></span>
         </button>
 
-        {isOpen && <BurgerMenu setIsOpen={setIsOpen} />}
+        {isOpen && (
+          <BurgerMenu setIsOpen={setIsOpen} menuToggleRef={menuToggleRef} />
+        )}
       </div>
     </header>
   );
