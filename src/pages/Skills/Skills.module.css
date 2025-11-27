@@ -165,9 +165,14 @@
     font-size: 2.25rem;
   }
 
+  .skillsContainer {
+    padding: 1rem;
+  }
+
   .subtitle {
     padding: 0 2rem;
     line-height: 2rem;
     font-size: 1rem;
+    margin-bottom: 0;
   }
 }

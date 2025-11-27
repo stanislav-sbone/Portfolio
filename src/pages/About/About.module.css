@@ -67,6 +67,10 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
   .about {
     padding: 0;
   }

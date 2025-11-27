@@ -231,6 +231,12 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .content {
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .contacts {
     padding-top: 2rem;
@@ -238,8 +244,7 @@
 
   .content {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding-bottom: 2rem;
+    padding: 0 1rem 2rem;
   }
 
   .cardIcon {
@@ -269,6 +274,19 @@
 
   .cardLink {
     font-size: 0.9rem;
+  }
+
+  .form {
+    gap: 1rem;
+  }
+
+  .formGroup {
+    padding-bottom: 0;
+    gap: 0.5rem;
+  }
+
+  .errorMessage {
+    position: static;
   }
 }
 
