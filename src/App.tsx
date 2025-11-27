@@ -8,6 +8,7 @@ import Contacts from './pages/Contacts';
 import Footer from './components/Footer';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Slide, ToastContainer } from 'react-toastify';
+import ScrollToTop from './components/common/ScrollToTop';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Header />
         <main>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
