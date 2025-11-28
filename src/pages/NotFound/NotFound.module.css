@@ -1,0 +1,55 @@
+.notFound {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 100%
+  );
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.errorCode {
+  display: block;
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  line-height: 1;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.link {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}

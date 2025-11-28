@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { Slide, ToastContainer } from 'react-toastify';
 import ScrollToTop from './components/common/ScrollToTop';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </Router>
