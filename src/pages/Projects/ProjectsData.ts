@@ -68,7 +68,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: 'Список героев из аниме Наруто',
-    description: 'Приложение для просмотра текущих цен на криптовалюту',
+    description: 'Приложение для просмотра списка героев из аниме Наруто',
     technologies: ['Typescript', 'React', 'React Router', 'styled-components'],
     githubUrl: 'https://github.com/stanislav-sbone/Naruto',
     demoUrl: 'https://naruto-sbone.vercel.app/',
