@@ -1,6 +1,6 @@
-import type ISkill from '../../types/skill';
+import type { Skill as SkillType } from '../../types/skill';
 
-export const frontendSkills: ISkill[] = [
+export const frontendSkills: SkillType[] = [
   { name: 'HTML', icon: '/assets/html.svg' },
   { name: 'CSS', icon: '/assets/css.png' },
   { name: 'JavaScript', icon: '/assets/js.svg' },
@@ -15,14 +15,14 @@ export const frontendSkills: ISkill[] = [
   { name: 'Material UI', icon: '/assets/mui.svg' },
 ];
 
-export const tools: ISkill[] = [
+export const tools: SkillType[] = [
   { name: 'Git', icon: '/assets/git.svg' },
   { name: 'Vite', icon: '/assets/vite.svg' },
   { name: 'Eslint', icon: '/assets/eslint.svg' },
   { name: 'Prettier', icon: '/assets/prettier.svg' },
 ];
 
-export const backendSkills: ISkill[] = [
+export const backendSkills: SkillType[] = [
   { name: 'Express.js', icon: '/assets/express.svg' },
   { name: 'Postman', icon: '/assets/postman.svg' },
   { name: 'SQL', icon: '/assets/sql.svg' },

@@ -1,4 +1,4 @@
-export default interface ISkill {
+export interface Skill {
   name: string;
   icon: string;
 }

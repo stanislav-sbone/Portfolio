@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import Skill from './Skill';
-import type ISkill from '../../types/skill';
 import styles from './Skills.module.css';
+import type { Skill as SkillType } from '../../types/skill';
 
 interface CategoryProps {
   title: string;
-  array: ISkill[];
+  array: SkillType[];
 }
 
 const Category: FC<CategoryProps> = ({ title, array }) => {
