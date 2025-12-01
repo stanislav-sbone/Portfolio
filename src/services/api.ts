@@ -17,7 +17,13 @@ export const sendMessage = async (
     });
     return response.data;
   } catch (error) {
-    console.log(`Ошибка: ${error}`);
-    throw error;
+    if (axios.isAxiosError(error)) {
+      const errorMessage =
+        error.response?.data?.error ||
+        error.message ||
+        'Ошибка при отправке сообщения';
+      throw new Error(errorMessage);
+    }
+    throw new Error('Неизвестная ошибка при отправке сообщения');
   }
 };
