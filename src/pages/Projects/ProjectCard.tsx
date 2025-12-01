@@ -2,12 +2,12 @@ import type { FC } from 'react';
 import styles from './Projects.module.css';
 import type { Project } from '../../types/project';
 
-interface IProps {
+interface ProjectCardProps {
   project: Project;
   onClick: () => void;
 }
 
-const ProjectCard: FC<IProps> = ({ project, onClick }) => {
+const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
     if (!target.closest('a')) {

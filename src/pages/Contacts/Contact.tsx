@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 import styles from './Contacts.module.css';
 
-interface IProps {
+interface ContactProps {
   name: string;
   href: string;
   value: string;
   image: string;
 }
 
-const Contact: FC<IProps> = ({ name, href, value, image }) => {
+const Contact: FC<ContactProps> = ({ name, href, value, image }) => {
   return (
     <div className={styles.contactCard}>
       <img src={image} className={styles.cardIcon} alt={name} />

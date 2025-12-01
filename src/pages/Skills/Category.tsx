@@ -3,12 +3,12 @@ import Skill from './Skill';
 import type ISkill from '../../types/skill';
 import styles from './Skills.module.css';
 
-interface IProps {
+interface CategoryProps {
   title: string;
   array: ISkill[];
 }
 
-const Category: FC<IProps> = ({ title, array }) => {
+const Category: FC<CategoryProps> = ({ title, array }) => {
   return (
     <>
       <h3 className={styles.categoryTitle}>{title}</h3>

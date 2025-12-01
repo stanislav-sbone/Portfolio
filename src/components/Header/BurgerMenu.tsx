@@ -5,12 +5,12 @@ import { useIsActive } from '../../hooks/useIsActive';
 import styles from './Header.module.css';
 import ThemeButton from './ThemeButton';
 
-interface IProps {
+interface BurgerMenuProps {
   setIsOpen: (state: boolean) => void;
   menuToggleRef: React.RefObject<HTMLButtonElement | null>;
 }
 
-const BurgerMenu: FC<IProps> = ({ setIsOpen, menuToggleRef }) => {
+const BurgerMenu: FC<BurgerMenuProps> = ({ setIsOpen, menuToggleRef }) => {
   const isActive = useIsActive();
   const menuRef = useRef<HTMLDivElement | null>(null);
 

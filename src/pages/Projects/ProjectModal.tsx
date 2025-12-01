@@ -3,13 +3,17 @@ import type { Project } from '../../types/project';
 import styles from './Projects.module.css';
 import ModalSection from './ModalSection';
 
-interface IProps {
+interface ProjectModalProps {
   project: Project;
   backdropClick: (e: React.MouseEvent<HTMLDivElement>) => void;
   closeModal: () => void;
 }
 
-const ProjectModal: FC<IProps> = ({ project, backdropClick, closeModal }) => {
+const ProjectModal: FC<ProjectModalProps> = ({
+  project,
+  backdropClick,
+  closeModal,
+}) => {
   return (
     <div className={styles.backdrop} onClick={backdropClick}>
       <div className={styles.modal}>

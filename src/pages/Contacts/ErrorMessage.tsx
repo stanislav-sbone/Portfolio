@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import styles from './Contacts.module.css';
 
-interface IProps {
+interface ErrorMessageProps {
   message?: string;
 }
 
-const ErrorMessage: FC<IProps> = ({ message }) => {
+const ErrorMessage: FC<ErrorMessageProps> = ({ message }) => {
   if (!message) return null;
   return <p className={styles.errorMessage}>{message}</p>;
 };
