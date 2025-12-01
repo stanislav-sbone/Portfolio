@@ -8,6 +8,7 @@ import styles from './Contacts.module.css';
 import ErrorMessage from './ErrorMessage';
 import { sendMessage } from '../../services/api';
 import { toast } from 'react-toastify';
+import { VALIDATION_RULES } from './validation';
 
 type Inputs = {
   name: string;
@@ -22,10 +23,10 @@ const nameOptions: RegisterOptions<Inputs, 'name'> = {
     if (trimmed.length === 0) {
       return 'Заполните поле с именем';
     }
-    if (trimmed.length < 2) {
+    if (trimmed.length < VALIDATION_RULES.NAME.MIN_LENGTH) {
       return 'Минимум 2 символа в имени';
     }
-    if (trimmed.length > 20) {
+    if (trimmed.length > VALIDATION_RULES.NAME.MAX_LENGTH) {
       return 'Максимум 20 символов в имени';
     }
     return true;
@@ -35,7 +36,7 @@ const nameOptions: RegisterOptions<Inputs, 'name'> = {
 const emailOptions: RegisterOptions<Inputs, 'email'> = {
   required: 'Заполните поле с email',
   pattern: {
-    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    value: VALIDATION_RULES.EMAIL.REGEX,
     message: 'Введите корректный email адрес',
   },
 };
@@ -47,10 +48,10 @@ const messageOptions: RegisterOptions<Inputs, 'message'> = {
     if (trimmed.length === 0) {
       return 'Заполните поле с сообщением';
     }
-    if (trimmed.length < 10) {
+    if (trimmed.length < VALIDATION_RULES.MESSAGE.MIN_LENGTH) {
       return 'Сообщение должно содержать минимум 10 символов';
     }
-    if (trimmed.length > 1000) {
+    if (trimmed.length > VALIDATION_RULES.MESSAGE.MAX_LENGTH) {
       return 'Сообщение не должно превышать 1000 символов';
     }
     return true;
