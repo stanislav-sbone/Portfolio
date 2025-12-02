@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { useCallback, type FC } from 'react';
 import styles from './Projects.module.css';
 import type { Project } from '../../types/project';
 
@@ -8,12 +8,15 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
-  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLElement;
-    if (!target.closest('a')) {
-      onClick();
-    }
-  };
+  const handleCardClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('a')) {
+        onClick();
+      }
+    },
+    [onClick],
+  );
 
   return (
     <div

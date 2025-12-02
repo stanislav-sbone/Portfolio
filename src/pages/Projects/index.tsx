@@ -1,4 +1,4 @@
-import { useState, useEffect, type FC } from 'react';
+import { useState, useEffect, type FC, useCallback } from 'react';
 import styles from './Projects.module.css';
 import { projects } from './ProjectsData';
 import ProjectCard from './ProjectCard';
@@ -9,21 +9,24 @@ const Projects: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalProject, setModalProject] = useState<Project | null>(null);
 
-  const handleOpenModal = (project: Project) => {
+  const handleOpenModal = useCallback((project: Project) => {
     setIsOpen(true);
     setModalProject(project);
-  };
+  }, []);
 
   const handleCloseModal = () => {
     setIsOpen(false);
     setModalProject(null);
   };
 
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      handleCloseModal();
-    }
-  };
+  const handleBackdropClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (e.target === e.currentTarget) {
+        handleCloseModal();
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
