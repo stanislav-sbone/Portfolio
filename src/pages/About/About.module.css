@@ -39,20 +39,73 @@
 .content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5rem;
+  padding-bottom: 4rem;
 }
 
-.textBlock {
+.accordion {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-.text {
+.accordionItem:not(:last-child) {
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 1rem;
+}
+
+.accordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  gap: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.accordionHeader:hover {
+  opacity: 0.7;
+}
+
+.accordionTitle {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.arrowDown {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--accent-color);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.arrowRotated {
+  transform: rotate(180deg);
+}
+
+.textContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
+  padding: 0;
+}
+
+.textContainerOpened {
+  max-height: 500px;
+  padding-top: 0.5rem;
+}
+
+.accordionText {
   font-size: 1.25rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  text-align: justify;
 }
 
 .highlight {
