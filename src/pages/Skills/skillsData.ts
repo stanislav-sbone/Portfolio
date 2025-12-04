@@ -26,4 +26,6 @@ export const backendSkills: SkillType[] = [
   { name: 'Express.js', icon: '/assets/express.svg' },
   { name: 'Postman', icon: '/assets/postman.svg' },
   { name: 'SQL', icon: '/assets/sql.svg' },
+  { name: 'JWT', icon: '/assets/jwt.svg' },
+  { name: 'Mongoose', icon: '/assets/mongoose.svg' },
 ];

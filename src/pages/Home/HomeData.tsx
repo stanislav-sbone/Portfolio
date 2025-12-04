@@ -2,6 +2,17 @@ import styles from './Home.module.css';
 
 export const homeParagraphs = [
   {
+    key: 'home_text_intro',
+    text: (
+      <>
+        Это мой личный сайт-визитка. Здесь вы можете найти мои{' '}
+        <span className={styles.subHighlight}>пет-проекты</span>,{' '}
+        <span className={styles.subHighlight}>стек технологий</span> и другую
+        информацию обо мне.
+      </>
+    ),
+  },
+  {
     key: 'home_text_1',
     text: (
       <>
