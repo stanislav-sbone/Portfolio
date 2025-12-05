@@ -1,7 +1,7 @@
 export const VALIDATION_RULES = {
   NAME: {
     MIN_LENGTH: 2,
-    MAX_LENGTH: 50,
+    MAX_LENGTH: 20,
   },
   MESSAGE: {
     MIN_LENGTH: 10,

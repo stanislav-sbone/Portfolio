@@ -24,10 +24,10 @@ const nameOptions: RegisterOptions<Inputs, 'name'> = {
       return 'Заполните поле с именем';
     }
     if (trimmed.length < VALIDATION_RULES.NAME.MIN_LENGTH) {
-      return 'Минимум 2 символа в имени';
+      return `Минимум ${VALIDATION_RULES.NAME.MIN_LENGTH} символа в имени`;
     }
     if (trimmed.length > VALIDATION_RULES.NAME.MAX_LENGTH) {
-      return 'Максимум 20 символов в имени';
+      return `Максимум ${VALIDATION_RULES.NAME.MAX_LENGTH} символов в имени`;
     }
     return true;
   },
@@ -49,10 +49,10 @@ const messageOptions: RegisterOptions<Inputs, 'message'> = {
       return 'Заполните поле с сообщением';
     }
     if (trimmed.length < VALIDATION_RULES.MESSAGE.MIN_LENGTH) {
-      return 'Сообщение должно содержать минимум 10 символов';
+      return `Сообщение должно содержать минимум ${VALIDATION_RULES.MESSAGE.MIN_LENGTH} символов`;
     }
     if (trimmed.length > VALIDATION_RULES.MESSAGE.MAX_LENGTH) {
-      return 'Сообщение не должно превышать 1000 символов';
+      return `Сообщение не должно превышать ${VALIDATION_RULES.MESSAGE.MIN_LENGTH} символов`;
     }
     return true;
   },
