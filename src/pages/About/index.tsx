@@ -2,8 +2,10 @@ import { type FC, useState } from 'react';
 import { accordionData } from './AccordionData';
 import AccordionItem from './Accordion';
 import styles from './About.module.css';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const About: FC = () => {
+  useDocumentTitle('О себе | Портфолио Станислав Борисенко');
   const [openedItems, setOpenedItems] = useState<Set<string>>(new Set());
 
   const toggleItem = (key: string) => {

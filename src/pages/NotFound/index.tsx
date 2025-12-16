@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 import { Link } from 'react-router';
 import styles from './NotFound.module.css';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const NotFound: FC = () => {
+  useDocumentTitle('Страница не найдена | Портфолио Станислав Борисенко');
   return (
     <section className={styles.notFound} role="alert" aria-live="polite">
       <div className={styles.container}>

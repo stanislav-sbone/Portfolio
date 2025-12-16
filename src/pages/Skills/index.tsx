@@ -2,8 +2,10 @@ import type { FC } from 'react';
 import { backendSkills, frontendSkills, tools } from './skillsData';
 import styles from './Skills.module.css';
 import Category from './Category';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const Skills: FC = () => {
+  useDocumentTitle('Навыки | Портфолио Станислав Борисенко');
   const categories = [
     { title: 'Frontend', array: frontendSkills },
     { title: 'Tools', array: tools },

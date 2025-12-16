@@ -4,8 +4,10 @@ import { projects } from './ProjectsData';
 import ProjectCard from './ProjectCard';
 import type { Project } from '../../types/project';
 import ProjectModal from './ProjectModal';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const Projects: FC = () => {
+  useDocumentTitle('Проекты | Портфолио Станислав Борисенко');
   const [isOpen, setIsOpen] = useState(false);
   const [modalProject, setModalProject] = useState<Project | null>(null);
 

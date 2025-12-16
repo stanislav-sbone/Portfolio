@@ -2,8 +2,11 @@ import type { FC } from 'react';
 import { homeParagraphs } from './HomeData';
 import styles from './Home.module.css';
 import HomeButtons from './HomeButtons';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const Home: FC = () => {
+  useDocumentTitle('Главная | Портфолио Станислав Борисенко');
+
   return (
     <section className={styles.home}>
       <div className={styles.container}>

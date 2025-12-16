@@ -3,8 +3,10 @@ import styles from './Contacts.module.css';
 import Contact from './Contact';
 import ContactForm from './ContactForm';
 import { contacts } from './ContactsData';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 const Contacts: FC = () => {
+  useDocumentTitle('Контакты | Портфолио Станислав Борисенко');
   return (
     <section className={styles.contacts}>
       <div className={styles.container}>
