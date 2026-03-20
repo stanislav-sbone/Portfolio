@@ -1,6 +1,37 @@
 import nodemailer from 'nodemailer';
+import { telegramBot } from '../lib/telegramBot';
 import { config } from '../config/env';
 import escape from 'escape-html';
+
+const chatId = process.env.TELEGRAM_CHAT_ID;
+
+export const sendTelegramNotification = async (
+  name: string,
+  email: string,
+  message: string,
+) => {
+  if (!chatId) {
+    throw new Error('TELEGRAM_CHAT_ID is not set');
+  }
+
+  const safeName = escape(name);
+  const safeEmail = escape(email);
+  const safeMessage = escape(message);
+
+  const text = [
+    '<b>Новое сообщение с Portfolio</b>',
+    '',
+    `Имя:   <b>${safeName}</b>`,
+    `Email:   ${safeEmail}`,
+    '',
+    'Сообщение:',
+    `<b>${safeMessage}</b>`,
+  ].join('\n');
+
+  await telegramBot.api.sendMessage(chatId, text, {
+    parse_mode: 'HTML',
+  });
+};
 
 export const sendContactEmail = async (
   name: string,
