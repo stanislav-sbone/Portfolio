@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import styles from './Projects.module.css';
+import styles from './ProjectModal.module.css';
 
 interface ModalSectionProps {
   title: string;
