@@ -27,6 +27,14 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
       <div className={styles.projectHeader}>
         <h3 className={styles.projectTitle}>{project.title}</h3>
       </div>
+      <img
+        src={project.image}
+        alt={project.title}
+        className={styles.projectImage}
+        loading="lazy"
+        decoding="async"
+      />
+
       <p className={styles.projectDescription}>{project.description}</p>
 
       <div className={styles.technologies}>
