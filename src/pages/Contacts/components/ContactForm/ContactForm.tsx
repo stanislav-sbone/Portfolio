@@ -4,11 +4,12 @@ import {
   type RegisterOptions,
   type SubmitHandler,
 } from 'react-hook-form';
-import styles from './Contacts.module.css';
+
 import ErrorMessage from './ErrorMessage';
-import { sendMessage } from '../../services/api';
 import { toast } from 'react-toastify';
 import { VALIDATION_RULES } from './validation';
+import { sendMessage } from '../../../../services/api';
+import styles from './ContactForm.module.css';
 
 type Inputs = {
   name: string;

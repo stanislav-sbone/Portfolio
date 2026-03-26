@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import styles from './Contacts.module.css';
+import styles from './ContactForm.module.css';
 
 interface ErrorMessageProps {
   message?: string;
