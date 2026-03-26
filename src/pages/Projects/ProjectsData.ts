@@ -4,7 +4,8 @@ export const projects: Project[] = [
   {
     id: 6,
     title: 'Интернет-магазин',
-    description: 'Fullstack интернет магазин техники',
+    description:
+      'Fullstack интернет магазин техники с каталогом товаров, избранным, корзиной и личным кабинетом',
     technologies: [
       'Typescript',
       'React',
@@ -121,7 +122,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: 'Список героев из аниме Наруто',
+    title: 'Список героев из Наруто',
     description: 'Приложение для просмотра списка героев из аниме Наруто',
     technologies: ['Typescript', 'React', 'React Router', 'styled-components'],
     githubUrl: 'https://github.com/stanislav-sbone/Naruto',
