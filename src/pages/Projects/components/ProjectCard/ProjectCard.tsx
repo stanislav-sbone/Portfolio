@@ -1,6 +1,6 @@
 import { useCallback, type FC } from 'react';
-import styles from './Projects.module.css';
-import type { Project } from '../../types/project';
+import type { Project } from '../../../../types/project';
+import styles from './ProjectCard.module.css';
 
 interface ProjectCardProps {
   project: Project;
@@ -19,23 +19,19 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
   );
 
   return (
-    <div
-      key={project.id}
-      className={styles.projectCard}
-      onClick={handleCardClick}
-    >
-      <div className={styles.projectHeader}>
-        <h3 className={styles.projectTitle}>{project.title}</h3>
+    <div key={project.id} className={styles.card} onClick={handleCardClick}>
+      <div className={styles.header}>
+        <h3 className={styles.title}>{project.title}</h3>
       </div>
       <img
         src={project.image}
         alt={project.title}
-        className={styles.projectImage}
+        className={styles.image}
         loading="lazy"
         decoding="async"
       />
 
-      <p className={styles.projectDescription}>{project.description}</p>
+      <p className={styles.description}>{project.description}</p>
 
       <div className={styles.technologies}>
         {project.technologies.map((tech) => (
@@ -45,7 +41,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, onClick }) => {
         ))}
       </div>
 
-      <div className={styles.projectLinks}>
+      <div className={styles.links}>
         {project.githubUrl && (
           <a
             href={project.githubUrl}

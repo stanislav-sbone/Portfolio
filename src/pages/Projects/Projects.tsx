@@ -1,10 +1,9 @@
 import { useState, useEffect, type FC, useCallback } from 'react';
-import styles from './Projects.module.css';
 import { projects } from './ProjectsData';
-import ProjectCard from './ProjectCard';
 import type { Project } from '../../types/project';
-import ProjectModal from './ProjectModal';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { ProjectCard, ProjectModal } from './components';
+import styles from './Projects.module.css';
 
 const Projects: FC = () => {
   useDocumentTitle('Проекты | Портфолио Станислав Борисенко');

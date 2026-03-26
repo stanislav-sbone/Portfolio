@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import type { Project } from '../../types/project';
-import styles from './Projects.module.css';
+import type { Project } from '../../../../types/project';
 import ModalSection from './ModalSection';
+import styles from './ProjectModal.module.css';
 
 interface ProjectModalProps {
   project: Project;
@@ -17,22 +17,18 @@ const ProjectModal: FC<ProjectModalProps> = ({
   return (
     <div className={styles.backdrop} onClick={backdropClick}>
       <div className={styles.modal}>
-        <div className={styles.modalContainer}>
-          <div className={styles.modalHeader}>
-            <h2 className={styles.modalTitle}>{project.title}</h2>
-            <button
-              className={styles.closeButton}
-              onClick={closeModal}
-              aria-label="Закрыть модальное окно"
-            >
+        <div className={styles.container}>
+          <div className={styles.header}>
+            <h2 className={styles.title}>{project.title}</h2>
+            <button className={styles.closeButton} onClick={closeModal}>
               ×
             </button>
           </div>
-          <div className={styles.modalContent}>
+          <div className={styles.content}>
             <img
               src={project.image}
               alt={project.title}
-              className={styles.modalImage}
+              className={styles.image}
             />
             <ModalSection title="Описание" value={project.description} />
             <ModalSection
