@@ -1,9 +1,8 @@
 import type { FC } from 'react';
-import styles from './Contacts.module.css';
-import Contact from './Contact';
-import ContactForm from './ContactForm';
 import { contacts } from './ContactsData';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { Contact, ContactForm } from './components';
+import styles from './Contacts.module.css';
 
 const Contacts: FC = () => {
   useDocumentTitle('Контакты | Портфолио Станислав Борисенко');

@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import styles from './Contacts.module.css';
+import styles from './Contact.module.css';
 
 interface ContactProps {
   name: string;
@@ -10,13 +10,13 @@ interface ContactProps {
 
 const Contact: FC<ContactProps> = ({ name, href, value, image }) => {
   return (
-    <div className={styles.contactCard}>
-      <img src={image} className={styles.cardIcon} alt={name} />
-      <div className={styles.cardContent}>
-        <p className={styles.cardTitle}>{name}</p>
+    <div className={styles.card}>
+      <img src={image} className={styles.icon} alt={name} />
+      <div className={styles.content}>
+        <p className={styles.title}>{name}</p>
         <a
           href={name === 'Email' ? `mailto:${href}` : href}
-          className={styles.cardLink}
+          className={styles.link}
         >
           {value}
         </a>
